@@ -22,7 +22,10 @@ For all question regarding the paper, please address correspondence to Pierre Be
 Disclaimer
 ----------
 
-This is a snapshot of the scripts used to generate the analysis for the above-mentioned publication at the time of production (Spring 2014) of the results reported in the paper. This code is not meant as a toolbox for public use. It is not documented, and many of the options are non-functional or have not been tested. This is a research-grade code, meant to clarify the details of implementation of the algorithms described in the aforementioned paper. The GLM-connectome method is publicly available as part of the [NIAK](https://github.com/SIMEXP/niak) package for the "boss" release 0.12.14 and latter. To run the code, please download NIAK from the [NITRC site](http://www.nitrc.org/frs/?group_id=411).  Some functions also depend on the "Multivariate Distance Matrix Regression" package (see the [tutorial]() to replicate the version used in the paper), as well as the "Network-Based Statistics" toolbox (see this [website]() for download).
+This is a snapshot of the scripts used to generate the analysis for the above-mentioned publication at the time of production (Spring 2014) of the results reported in the paper. This code is not meant as a toolbox for public use. It is not documented, and many of the options are non-functional or have not been tested. This is a research-grade code, meant to clarify the details of implementation of the algorithms described in the aforementioned paper. The GLM-connectome method is publicly available as part of the [NIAK](https://github.com/SIMEXP/niak) package for the "boss" release 0.12.14 and latter. To run the code, please download NIAK 0.12.14 from the [NITRC site](http://www.nitrc.org/frs/?group_id=411).  Some functions also depend on the "Multivariate Distance Matrix Regression" package version 512745280a5350c527201c487a7e337041d6cfc6 (see the [tutorial](https://github.com/SIMEXP/glm_connectome/wiki/MDMR) to replicate the version used in the paper), as well as the "Network-Based Statistics" toolbox version 1.2 (see this [website](https://sites.google.com/site/bctnet/comparison/nbs) for download).
+
+Data
+----
 
 Note that due to restrictions imposed by the consent forms signed by the subjects, some of the data used in the paper cannot be shared. The following resources have been made available:
 
