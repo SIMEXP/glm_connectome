@@ -48,10 +48,7 @@ Simulations
  * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_nbs_mismatch.m) for the NBS pipeline, in the presence of mismatch between true and test clusters.
  * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_nbs_perfect_match.m) for the NBS pipeline, with perfect match between true and test clusters.
 
-
-
-
-Analysis of the MOTOR dataset
+GLM-connectome analysis of the MOTOR dataset
 -----------------------------
  * The [preprocessing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_preprocessed_20140405.m) pipeline.
  * The [region growing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_region_growing_20140405.m) pipeline.
@@ -59,7 +56,7 @@ Analysis of the MOTOR dataset
  * The [GLM connectome (group FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_glm_20140405.m) pipeline.
  * The [GLM connectome (BH FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_glm_BH_FDR_20140518.m) pipeline.
 
-Analysis of the BLIND dataset
+GLM-connectome analysis of the BLIND dataset
 -----------------------------
  * The [preprocessing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/BLIND_pipeline_preprocess_20140405.m) pipeline.
  * The [region growing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/BLIND_pipeline_region_growing_20140405.m) pipeline.
@@ -67,7 +64,7 @@ Analysis of the BLIND dataset
  * The [GLM connectome (group FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/BLIND_pipeline_glm_20140405.m) pipeline.
  * The [GLM connectome (BH FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/BLIND_pipeline_glm_global_BH_FDR_20140518.m) pipeline.
 
-Analysis of the SCHIZO dataset
+GLM-connectome analysis of the SCHIZO dataset
 -----------------------------
  * The [preprocessing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_preprocess_20140405.m) pipeline.
  * The [region growing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_region_growing_20140405.m) pipeline.
@@ -75,8 +72,8 @@ Analysis of the SCHIZO dataset
  * The [GLM connectome (group FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_glm_20140405.m) pipeline.
  * The [GLM connectome (BH FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_glm_BH_FDR_20140518.m) pipeline.
 
-MDMR and NBS (real data)
-------------------------
+MDMR and NBS analysis of all real data
+--------------------------------------
  * Prepare [confounds](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_confounds_mdmr.m) for the MDMR analysis of the MOTOR dataset.
  * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MDMR_MOTOR_20140720.m) for the MOTOR dataset.
  * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MDMR_BLIND_SCHIZO_20140518.m) for the BLIND and SCHIZO datasets.
