@@ -1,3 +1,4 @@
+% Run NBS on the BLIND, SCHIZO and MOTOR datasets. In this version on the script, the FWE has been set to 0.2 to have a look at trends.
 clear all
 addpath(genpath('/usr/local/quarantine/niak-boss-0.12.4/'));
 addpath(genpath('/usr/local/svn/projects/'));
