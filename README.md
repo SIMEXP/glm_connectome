@@ -35,7 +35,18 @@ Note that due to restrictions imposed by the consent forms signed by the subject
 
 Simulations
 -----------
- * The [group hierarchicl clustering](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_hier_clustering_cambridge.m) of the Cambridge sample.
+ * The [group hierarchical clustering](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_hier_clustering_cambridge.m) of the Cambridge sample.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_glm_connectome_BH-FDR_mismatch.m) for the multiscale GLM-connectome pipeline with BH FDR, in the presence of mismatch between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_glm_connectome_BH-FDR_perfect_match.m) for the multiscale GLM-connectome pipeline with BH FDR, with perfect match between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_glm_connectome_group-FDR_mismatch.m) for the multiscale GLM-connectome pipeline with group FDR, in the presence of mismatch between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_glm_connectome_group-FDR_perfect_match.m) for the multiscale GLM-connectome pipeline with group FDR, with perfect match between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_mdmr_mismatch.m) for the MDMR pipeline, in the presence of mismatch between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_mdmr_perfect_match.m) for the MDMR pipeline, with perfect match between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_nbs_mismatch.m) for the NBS pipeline, in the presence of mismatch between true and test clusters.
+ * The [simulation pipeline](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_pipeline_simu_multiscale_nbs_perfect_match.m) for the NBS pipeline, with perfect match between true and test clusters.
+
+
+
 
 Analysis of the MOTOR dataset
 -----------------------------
