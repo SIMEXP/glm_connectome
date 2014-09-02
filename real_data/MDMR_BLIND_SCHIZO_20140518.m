@@ -1,3 +1,5 @@
+% Run MDMR on the SCHIZO and BLIND datasets
+
 clear all
 addpath(genpath('/usr/local/quarantine/niak-boss-0.12.4/'));
 addpath(genpath('/usr/local/svn/projects/'));
