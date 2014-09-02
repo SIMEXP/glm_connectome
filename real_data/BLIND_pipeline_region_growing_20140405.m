@@ -1,3 +1,5 @@
+% Run the region growing pipeline on the BLIND dataset.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting input/output files %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
