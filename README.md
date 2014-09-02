@@ -45,6 +45,6 @@ Analysis of the MOTOR dataset
 MDMR and NBS (real data)
 ------------------------
  * Prepare [confounds](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_confounds_mdmr.m) for the MDMR analysis of the MOTOR dataset.
- * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_MDMR_20140720.m) for the MOTOR dataset.
+ * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MDMR_MOTOR_20140720.m) for the MOTOR dataset.
  * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MDMR_BLIND_SCHIZO_20140518.m) for the BLIND and SCHIZO datasets.
  * Run [NBS](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/NBS_MOTOR_BLIND_SCHIZO_503.m) on the MOTOR, BLIND and SCHIZO datasets.
