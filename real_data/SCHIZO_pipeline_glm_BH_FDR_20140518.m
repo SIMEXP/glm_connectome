@@ -1,3 +1,5 @@
+% Run the multiscale GLM-connectome pipeline (with BH FDR) on the SCHIZO dataset
+
 clear all
 
 addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.4/'))
