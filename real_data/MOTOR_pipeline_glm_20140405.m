@@ -1,3 +1,5 @@
+% Run the GLM-connectome pipeline on the MOTOR dataset, using the group FDR procedure.
+
 clear all
 
 addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.2/'))
