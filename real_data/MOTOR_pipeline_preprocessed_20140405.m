@@ -1,6 +1,5 @@
  
-% Create the inputs of and launch the NIAK_PIPELINE_FMRI_PREPROCESS on the
-% specified dataset 
+% Run the preprocessing pipeline on the MOTOR dataset. 
 
 clear all
 
