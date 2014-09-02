@@ -1,3 +1,5 @@
+% Run MDMR on the MOTOR dataset.
+
 clear all
 addpath(genpath('/sb/project/gsf-624-aa/quarantaine/niak-boss-0.12.14/'));
 addpath(genpath('/home/pbellec/svn/projects/glm_connectome/'));
