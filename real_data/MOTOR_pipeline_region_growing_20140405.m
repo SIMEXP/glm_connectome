@@ -1,3 +1,5 @@
+%% Run a region growing pipeline on the MOTOR dataset.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Setting input/output files %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
