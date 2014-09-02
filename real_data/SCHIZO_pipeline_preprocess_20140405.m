@@ -1,3 +1,4 @@
+% Run the preprocessing pipeline on the SCHIZO dataset 
  
 % Create the inputs of and launch the NIAK_PIPELINE_FMRI_PREPROCESS on the
 % specified dataset (cobre dataset)
