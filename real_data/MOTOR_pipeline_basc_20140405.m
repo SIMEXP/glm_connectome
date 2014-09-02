@@ -1,3 +1,4 @@
+% Run a BASC pipeline on the MOTOR dataset
 clear all
 
 addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.2/'))
@@ -26,7 +27,7 @@ opt.scales_maps = repmat ([5:5:100 110:10:200 220:20:400]',1,3);
 opt.stability_tseries.nb_samps = 100; % Number of bootstrap samples at the individual level. 100: the CI on indidividual stability is +/-0.1
 opt.stability_group.nb_samps = 500; % Number of bootstrap samples at the group level. 500: the CI on group stability is +/-0.05
 
-%opt.flag_tseries_network = true; % permet de réduire le temps de calcul au niveau de glm-connectome
+%opt.flag_tseries_network = true; % permet de rÃ©duire le temps de calcul au niveau de glm-connectome
 
 %%%%%%%%%%%%%%%%%%%%%%
 %% Run the pipeline %%
