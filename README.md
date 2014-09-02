@@ -30,6 +30,16 @@ Data
 Note that due to restrictions imposed by the consent forms signed by the subjects, some of the data used in the paper cannot be shared. The following resources have been made available:
 
 
-Content
--------
+Simulations
+-----------
+ * The [group hierarchicl clustering](https://github.com/SIMEXP/glm_connectome/blob/master/simus_scripts/glmc_hier_clustering_cambridge.m) of the Cambridge sample.
 
+Data preprocessing: MOTOR
+-------------------------
+ * The [preprocessing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_preprocessed_20140405.m) of the MOTOR dataset.
+ * The [region growing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_region_growing_20140405.m) of the MOTOR dataset.
+ * The [Boostrap Analysis of Stable Clusters]() of the MOTOR dataset.
+ * The [GLM connectome (group FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_glm_20140405.m) pipeline of the MOTOR dataset
+ * The [GLM connectome (BH FDR)](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_glm_BH_FDR_20140518.m) pipeline of the MOTOR dataset
+ * Prepare [confounds](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_confounds_mdmr.m) for the MDMR analysis of the MOTOR dataset.
+ * Run [MDMR](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_MDMR_20140720.m) on the motor dataset.
