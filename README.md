@@ -34,7 +34,7 @@ Data
 ----
 
 Note that due to restrictions imposed by the consent forms signed by the subjects, some of the data used in the paper cannot be shared. The following resources have been made available:
-  * The [preprocessed time series]() (at the region level) for the Cambridge sample. These were used as a basis to simulate group changes in connectivity.
+  * The [preprocessed time series](http://figshare.com/articles/Cambridge_resting_state_fMRI_time_series_preprocessed_with_NIAK_0_12_4/1159331) (at the region level) for the Cambridge sample. These were used as a basis to simulate group changes in connectivity.
   * The [preprocessed 3D+t fMRI time series]() of the COBRE sample, used in the SCHIZO analysis of real data.
 
 Simulations
