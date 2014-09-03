@@ -5,7 +5,7 @@ This github repository is a companion for the following publication:
 
 _Multiscale statistical testing for connectome-wide association studies in fMRI_
 
-P. Bellec<sup>1,2</sup>, Y. Benhajali<sup>1,3</sup>, F. Carbonell<sup>4</sup>, C. Dansereau<sup>1,2</sup>, Z. Shehzad<sup>5,6,7</sup>, G. Albouy<sup>1</sup>, M. Pelland<sup>1,8</sup>, C. Craddock<sup>6,7</sup>, O. Collignon<sup>1,8</sup>, J. Doyon<sup>1,8</sup>, E. Stip<sup>1,9</sup>, P. Orban<sup>1,9</sup>
+P. Bellec<sup>1,2</sup>, Y. Benhajali<sup>1,3</sup>, F. Carbonell<sup>4</sup>, C. Dansereau<sup>1,2</sup>, Z. Shehzad<sup>5,6,7</sup>, G. Albouy<sup>1</sup>, M. Pelland<sup>1,8</sup>, C. Craddock<sup>6,7</sup>, O. Collignon<sup>1,8</sup>, J. Doyon<sup>1,8</sup>, E. Stip<sup>9,10</sup>, P. Orban<sup>1,9</sup>
 
   <sup>1</sup>Functional Neuroimaging Unit, Centre de Recherche de l'Institut Universitaire de Gériatrie de Montréal  
   <sup>2</sup>Department of Computer Science and Operations Research, University of Montreal, Montreal, Quebec, Canada
@@ -16,7 +16,7 @@ P. Bellec<sup>1,2</sup>, Y. Benhajali<sup>1,3</sup>, F. Carbonell<sup>4</sup>, C
   <sup>7</sup>Center for the Developing Brain, Child Mind Institute, New York, NY, United States of America
   <sup>8</sup>Department of Psychology, University of Montreal, Montreal, Quebec, Canada
   <sup>9</sup>Department of Psychiatry, University of Montreal, Montreal, Quebec, Canada  
-  
+  <sup>10<sup>Centre Hospitalier de l'Université de Montréal, Montreal, Quebec, Canada
 For all question regarding the paper, please address correspondence to Pierre Bellec, CRIUGM, 4545 Queen Mary, Montreal, QC, H3W 1W5, Canada. Email: pierre.bellec (at) criugm.qc.ca. 
 
 Disclaimer
