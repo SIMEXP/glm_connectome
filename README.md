@@ -18,6 +18,8 @@ P. Bellec<sup>1,2</sup>, Y. Benhajali<sup>1,3</sup>, F. Carbonell<sup>4</sup>, C
   <sup>9</sup>Department of Psychiatry, University of Montreal, Montreal, Quebec, Canada  
   <sup>10</sup>Centre Hospitalier de l'Université de Montréal, Montreal, Quebec, Canada
   
+The manuscript is currently in peer review, and the preprint is available on arxiv. Please cite as [arXiv:1409.2080](http://arxiv.org/abs/1409.2080) [q-bio.QM]
+
 For all question regarding the paper, please address correspondence to Pierre Bellec, CRIUGM, 4545 Queen Mary, Montreal, QC, H3W 1W5, Canada. Email: pierre.bellec (at) criugm.qc.ca. 
 
 Disclaimer
