@@ -12,7 +12,7 @@ list_net = list_net (list_net~=0);
 
 perc_disc = 0;
 for nn = 1:length(list_net)
-    val = unique(vol_perc(mask==list_net(nn));
+    val = unique(vol_perc(mask==list_net(nn)));
     if length(val)>1
         error('More than one percentage of discovery was found in network %i. This should not be the case',list_net(nn));
     end
