@@ -47,11 +47,11 @@ function results_simu = glmc_simu_multiscale(tseries_all,hier,opt,flag_init)
 %      randomly assigned to other clusters.
 %
 %   TYPE_FDR
-%      (string, default 'LSL_sym') how the FDR is controled. 
+%      (string, default 'BH') how the FDR is controled. 
 %      See the TYPE argument of NIAK_GLM_FDR.
 %
-%   FDR
-%      (scalar, default 0.05) the level of acceptable false-discovery rate 
+%   LIST_FDR
+%      (vector, default [0.05]) the levels of acceptable false-discovery rate 
 %      for the t-maps.
 %
 %   NB_SUBJECT
@@ -108,8 +108,8 @@ function results_simu = glmc_simu_multiscale(tseries_all,hier,opt,flag_init)
 
 %% Options
 if (nargin < 4)||flag_init
-    list_fields   = { 'perc_rand' , 'type_data' , 'theta2' , 'nb_samps' , 'fdr' , 'type_fdr' , 'nb_subject' , 'alpha2' , 'list_scales' , 'scale_ref' , 'cluster_ref' , 'flag_verbose' };
-    list_defaults = { 0           , 'real'      , 0.1      , 0          , 0.05  , 'LSL_sym'  , NaN          , 0.2      , NaN           , NaN         , NaN           , true           };
+    list_fields   = { 'perc_rand' , 'type_data' , 'theta2' , 'nb_samps' , 'list_fdr' , 'type_fdr' , 'nb_subject' , 'alpha2' , 'list_scales' , 'scale_ref' , 'cluster_ref' , 'flag_verbose' };
+    list_defaults = { 0           , 'real'      , 0.1      , 0          , 0.05       , 'BH'  , NaN          , 0.2      , NaN           , NaN         , NaN           , true           };
     opt = psom_struct_defaults(opt,list_fields,list_defaults);
 end
 
@@ -244,10 +244,8 @@ mask1(ind1) = true;
 opt_glm.test  = 'ttest' ;
 opt_glm.flag_beta = true ; 
 opt_glm.flag_residuals = true ;
-q = opt.fdr;
-nb_discovery = zeros(length(opt.list_scales),1);
-perc_discovery = zeros(length(opt.list_scales),1);
-test_q = cell(length(opt.list_scales),1);
+perc_discovery = zeros(length(opt.list_scales),length(opt.list_fdr));
+test_q = cell(length(opt.list_scales),length(opt.list_fdr));
 vol_disc = 0;
 for ss = 1:length(opt.list_scales)
     if opt.flag_verbose
@@ -257,17 +255,13 @@ for ss = 1:length(opt.list_scales)
     glm(ss).c = [0 ; 1];
     glm(ss).y = conn{ss};
     results = niak_glm( glm(ss) , opt_glm );
-    [fdr,test_q{ss}] = niak_glm_fdr(results.pce,opt.type_fdr,q,'correlation');
-    nb_discovery(ss) = sum(sum(test_q{ss},1));
-    perc_discovery(ss) = mean(nb_discovery(ss)/size(fdr,1));
-    if any(niak_mat2lvec(test_q{ss}));
-        vol_disc = vol_disc + sum(results.ttest(niak_mat2lvec(test_q{ss})).^2);
-    else
-        vol_disc = vol_disc + max(abs(results.ttest)).^2;
+    for ff = 1:length(opt.list_fdr)
+        q = opt.list_fdr(ff);
+        [fdr,test_q{ss,ff}] = niak_glm_fdr(results.pce,opt.type_fdr,q,'correlation');
+        perc_discovery(ss,ff) = sum(test_q{ss,ff}(:)/length(test_q{ss,ff}(:)));
     end
 end
-nb_disc = sum(nb_discovery);
-
+perc_disc = mean(perc_discovery,1);
 if opt.flag_verbose
     fprintf('\n')
 end
@@ -277,26 +271,22 @@ if opt.nb_samps>0
     if opt.flag_verbose
         fprintf('Estimate the significance of the number of findings ...\n')
     end
-    p_nb_disc = 0;
-    nb_disc_null = zeros([opt.nb_samps 1]);
-    vol_disc_null = zeros([opt.nb_samps 1]);    
+    p_nb_disc = zeros(length(list_fdr),1);
+    perc_disc_null = zeros([opt.nb_samps length(list_fdr)]);
     for num_s = 1:opt.nb_samps
         if opt.flag_verbose
             niak_progress(num_s,opt.nb_samps);
         end
-        glm_null = niak_permutation_glm(glm);        
-        for num_e = 1:length(glm_null)
-            res_null = niak_glm(glm_null(num_e),opt_glm);
-            [fdr_null,test_null] = niak_glm_fdr(res_null.pce,opt.type_fdr,opt.fdr,'correlation');
-            nb_disc_null(num_s) = nb_disc_null(num_s) + double(sum(test_null(:)));
-            if any(niak_mat2lvec(test_null));
-                vol_disc_null(num_s) = vol_disc_null(num_s) + sum(res_null.ttest(niak_mat2lvec(test_null)).^2);
-            else
-                vol_disc_null(num_s) = vol_disc_null(num_s) + max(abs(res_null.ttest)).^2;
+        for ff = 1:length(opt.list_fdr)
+            glm_null = niak_permutation_glm(glm);        
+            for num_e = 1:length(glm_null)
+                res_null = niak_glm(glm_null(num_e),opt_glm);
+                [fdr_null,test_null] = niak_glm_fdr(res_null.pce,opt.type_fdr,opt.list_fdr(ff),'correlation');
+                perc_disc_null(num_s,ff) = perc_disc_null(num_s,ff) + (sum(double(test_null(:)))/length(test_null(:)));
             end
+            perc_disc_null(num_s,ff) = perc_disc_null/length(glm_null);
+            p_nb_disc(ff) = p_nb_disc(ff) + double(perc_disc_null(num_s,ff)>=perc_disc(ff));
         end
-        %p_nb_disc = p_nb_disc + double(nb_disc_null(num_s)>=nb_disc);
-        p_nb_disc = p_nb_disc + double(vol_disc_null(num_s)>=vol_disc);
     end
     p_nb_disc = p_nb_disc / opt.nb_samps;
 else
