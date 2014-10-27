@@ -119,31 +119,28 @@ end
         
 %% Read partitions
 part = niak_threshold_hierarchy(hier,struct('thresh',opt.list_scales));
-if ~isempty(opt.scale_ref)
-    mask_ref = opt.list_scales == opt.scale_ref;
-    if ~any(mask_ref)&&~isempty(opt.scale_ref)
-        error('I could not find the scale of reference in the list of scales !!')
-    end
-    cluster_ref = opt.cluster_ref;
-    part_ref = part(:,mask_ref) == cluster_ref;
-    part_ref_raw = part_ref;
+if ~isempty(opt.scale_ref)   
+    part_ref = niak_threshold_hierarchy(hier,struct('thresh',opt.scale_ref));
+    ind_ref = opt.cluster_ref;
+    clust_ref = part_ref == ind_ref;
+    clust_ref_raw = clust_ref;
     if opt.perc_rand>0
-        part_ref_r = zeros(size(part_ref));
-        ind_c = find(part_ref);
+        clust_ref_r = zeros(size(clust_ref));
+        ind_c = find(clust_ref);
         %ind_c = ind_c(randperm(length(ind_c)));        % Use a deterministic discrepancy
-        ind_nc = find(~part_ref);
+        ind_nc = find(~clust_ref);
         %ind_nc = ind_nc(randperm(length(ind_nc)));     % Use a deterministic discrepancy   
         nb_r = floor(length(ind_c)*opt.perc_rand);
-        part_ref_r(ind_c(1:(end-nb_r))) = 1;
-        part_ref_r(ind_nc(1:nb_r)) = 1;
-        part_ref = part_ref_r>0;        
+        clust_ref_r(ind_c(1:(end-nb_r))) = 1;
+        clust_ref_r(ind_nc(1:nb_r)) = 1;
+        clust_ref = clust_ref_r>0;        
     end
-    part_ref_raw = part_ref & part_ref_raw;
+    clust_ref_raw = clust_ref & clust_ref_raw;
 else
     warning('No scale of reference was specified, simulations are generated under the global null');
-    part_ref = [];
-    cluster_ref = 0;
-    mask_ref = false(size(opt.list_scales));
+    clust_ref = [];
+    ind_ref = 0;
+    part_ref = zeros(size(part,1));
 end
 
 %% Generate a mask of truth
@@ -151,7 +148,7 @@ for ss = 1:length(opt.list_scales)
     mask_truth{ss} = false(opt.list_scales(ss),1);
     if ~isempty(opt.scale_ref)
         for cc = 1:opt.list_scales(ss)
-            mask_truth{ss}(cc) = any(part_ref_raw(part(:,ss)==cc));
+            mask_truth{ss}(cc) = any(clust_ref_raw(part(:,ss)==cc));
         end
     end
 end
@@ -183,7 +180,7 @@ for tt = 1:length(tseries_all)
             %% are impacted by the addition of a signal in the simulations that follow
             if ~isempty(opt.scale_ref)
                 for cc = 1:opt.scale_ref
-                    tseries(:,part(:,mask_ref)==cc) = niak_bootstrap_tseries(tseries(:,part(:,mask_ref)==cc));
+                    tseries(:,part_ref==cc) = niak_bootstrap_tseries(tseries(:,part_ref==cc));
                 end
             end
         case 'homogeneous'
@@ -199,7 +196,7 @@ for tt = 1:length(tseries_all)
     if any(ind1==tt)&&~isempty(opt.scale_ref)
         % simulate an effect !
         tseries_raw = tseries;
-        tseries(:,part_ref) = sqrt(1-opt.alpha2)*tseries(:,part_ref) + sqrt(opt.alpha2)*repmat(randn([size(tseries,1) 1]),[1 sum(part_ref)]);        
+        tseries(:,clust_ref) = sqrt(1-opt.alpha2)*tseries(:,clust_ref) + sqrt(opt.alpha2)*repmat(randn([size(tseries,1) 1]),[1 sum(clust_ref)]);        
     end        
         
     %% Measure the empirical effect size    
@@ -271,8 +268,8 @@ if opt.nb_samps>0
     if opt.flag_verbose
         fprintf('Estimate the significance of the number of findings ...\n')
     end
-    p_nb_disc = zeros(length(list_fdr),1);
-    perc_disc_null = zeros([opt.nb_samps length(list_fdr)]);
+    p_nb_disc = zeros(length(opt.list_fdr),1);
+    perc_disc_null = zeros([opt.nb_samps length(opt.list_fdr)]);
     for num_s = 1:opt.nb_samps
         if opt.flag_verbose
             niak_progress(num_s,opt.nb_samps);
@@ -284,7 +281,7 @@ if opt.nb_samps>0
                 [fdr_null,test_null] = niak_glm_fdr(res_null.pce,opt.type_fdr,opt.list_fdr(ff),'correlation');
                 perc_disc_null(num_s,ff) = perc_disc_null(num_s,ff) + (sum(double(test_null(:)))/length(test_null(:)));
             end
-            perc_disc_null(num_s,ff) = perc_disc_null/length(glm_null);
+            perc_disc_null(num_s,ff) = perc_disc_null(num_s,ff)/length(glm_null);
             p_nb_disc(ff) = p_nb_disc(ff) + double(perc_disc_null(num_s,ff)>=perc_disc(ff));
         end
     end
