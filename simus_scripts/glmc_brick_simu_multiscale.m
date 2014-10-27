@@ -50,9 +50,9 @@ function [files_in,files_out,opt] = glmc_brick_simu_multiscale(files_in,files_ou
 %      (integer) the cluster that is used to simulate the effect at the scale 
 %      of reference.
 %
-%   TYPE_FDR
-%      (string, default 'LSL_sym') how the FDR is controled. 
-%      See the TYPE argument of NIAK_GLM_FDR.
+%   LIST_FDR
+%      (vector, default [0.05]) the levels of acceptable false-discovery rate 
+%      for the t-maps.
 %
 %   FDR
 %      (scalar, default 0.05) the level of acceptable false-discovery rate 
@@ -134,8 +134,8 @@ list_defaults = { NaN       , NaN    };
 files_in = psom_struct_defaults(files_in,list_fields,list_defaults);
 
 %% Options
-list_fields   = { 'perc_rand' , 'nb_replication' , 'type_data' , 'theta2' , 'nb_samps' , 'fdr' , 'type_fdr' , 'nb_subject' , 'rand_seed' , 'alpha2' , 'list_scales' , 'scale_ref' , 'cluster_ref' , 'flag_verbose' , 'flag_test'  };
-list_defaults = { 0           , 1                , 'real'      , 0.1      , 0          , 0.05  , 'LSL_sym'  , NaN          , []          , 0.2      , NaN           , NaN         , NaN           , true           , false        };
+list_fields   = { 'perc_rand' , 'nb_replication' , 'type_data' , 'theta2' , 'nb_samps' , 'list_fdr' , 'type_fdr'  , 'nb_subject' , 'rand_seed' , 'alpha2' , 'list_scales' , 'scale_ref' , 'cluster_ref' , 'flag_verbose' , 'flag_test'  };
+list_defaults = { 0           , 1                , 'real'      , 0.1      , 0          , 0.05       , 'BH-global' , NaN          , []          , 0.2      , NaN           , NaN         , NaN           , true           , false        };
 opt = psom_struct_defaults(opt,list_fields,list_defaults);
 
 if opt.scale_ref == 0
