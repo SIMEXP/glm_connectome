@@ -53,7 +53,7 @@ param.nb_samps       = 100;
 param.nb_replication = 10;
 
 % The list of scales to be tested 
-param.list_scales = [10:20:300];
+param.list_scales = [10:10:300];
 
 % The number of permutation samples for the omnibus test
 param.nb_perm = 100;
