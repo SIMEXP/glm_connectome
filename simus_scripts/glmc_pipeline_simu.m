@@ -49,11 +49,11 @@ in.hier = [path_roi filesep 'hier_avg_connectome.mat'];
 % The number of simulation samples. 
 % Note that each simulation job is performing itself several simulations. 
 % The final number of simulations is NB_SAMPS*NB_REPLICATION
-param.nb_samps       = 100; 
-param.nb_replication = 10;
+param.nb_samps       = 20; 
+param.nb_replication = 50;
 
 % The list of scales to be tested 
-param.list_scales = [10:10:300];
+param.list_scales = [7 16 25 55 114 199 328];
 
 % The number of permutation samples for the omnibus test
 param.nb_perm = 100;
@@ -68,8 +68,8 @@ param.perc_rand = [0 0.3];
 % At scale 0, there is not simulated signal (global null hypothesis)
 % At scale 4, cluster 4 is 38.7% of the grey matter, which makes for a percentage of true difference close to 15% (14.98%)
 % At scale 7, cluster 7 is 20.5% of the grey matter, which makes for a percentage of true difference close to 4% (4.2%)
-param.sc             = { 0 , 4 , 7 }; % The scale of reference that use used to define the ground truth
-param.cluster        = { 0 , 4 , 7 }; % The number of the cluster that is used at the scale of reference. The fact that SC and CLUSTER are identical is a coincidence.
+param.sc      = { 0 , 4 , 7 }; % The scale of reference that use used to define the ground truth
+param.cluster = { 0 , 4 , 7 }; % The number of the cluster that is used at the scale of reference. The fact that SC and CLUSTER are identical is a coincidence.
 
 % Number of subjects per group
 param.nsub           = {  40 , 100 }; 
