@@ -22,7 +22,8 @@ list_M = [0 0.01 0.05 0.1]; % Number of true positive per family
 list_theta = [2 3 5]; % The effect size
 nb_samps = 10000; % Numer of samples
 nb_perm = 10000; % Number of permutation samples for the omnibus tests
-list_N = [7 16 25 55 114 199 328]; % Number of tests per family
+list_sc = [7 16 25 55 114]; % Number of tests per family
+list_N = list_sc.*(list_sc+1)/2;
 
 %% Colors for the sensitivity plot
 list_color = {'b','g','r','k'};
@@ -129,30 +130,34 @@ for mm = 1:length(list_M)
         end
         
         %% Now make figures
-        for pp = 1:length(list_pce)
-            % The FDR figure
-            name_fig = sprintf('omnibus%i_sc%i_eff%i',ceil(100*list_pce(pp)),ceil(100*list_M(mm)),list_theta(tt));
-            hf = figure;
-            hold on
-            plot([0; max(list_fdr)],[0; max(list_fdr)],'k')            
-            plot(list_fdr,fdr,'b')
-            plot(list_fdr,fdr_global(:,pp),'r')
-            axis([0 max(list_fdr) 0 0.2]);
-            xlabel('Nominal FDR')
-            ylabel('Effective FDR')
-            title(strrep(name_fig,'_',' '))
-            print(hf,[path_res filesep 'fdr_' name_fig '.pdf'],'-dpdf')
-            close(hf)
+        
+        % The FDR figure
+        name_fig = sprintf('sc%i_eff%i',ceil(100*list_M(mm)),list_theta(tt));
+        
+        hf = figure;
+        hold on
+        plot([0; max(list_fdr)],[0; max(list_fdr)],'k')            
+        plot(list_fdr,fdr,'b')
+        plot(list_fdr,fdr_global(:,1),'r')
+        plot(list_fdr,fdr_global(:,2),'g')
+        axis([0 max(list_fdr) 0 0.2]);
+        xlabel('Nominal FDR')
+        ylabel('Effective FDR')
+        title(strrep(name_fig,'_',' '))
+        print(hf,[path_res filesep 'fdr_' name_fig '.pdf'],'-dpdf')
+        close(hf)
             
             % the sensitivity figure
+        for pp = 1:length(list_pce)
+            name_fig = sprintf('omnibus%i_sc%i_eff%i',ceil(100*list_pce(pp)),ceil(100*list_M(mm)),list_theta(tt));
             if list_M(mm)~=0
                 hf = figure;
                 hold on    
                 for ff = 1:length(list_fdr)
-                    plot(list_N,sens(ff,:,pp)',list_color{ff})
+                    plot(list_sc,sens(ff,:,pp)',list_color{ff})
                 end
                 legend(cellstr(num2str(list_fdr'))')
-                axis([0 max(list_N) 0 1]);
+                axis([0 max(list_sc) 0 1]);
                 xlabel('Scale')
                 ylabel('Sensitivity')
                 title(strrep(name_fig,'_',' '))
