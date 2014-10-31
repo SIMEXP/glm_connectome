@@ -18,11 +18,26 @@ psom_set_rand_seed(0);
 %% Simulation parameters
 list_pce = [0.05 Inf]; % The significance level for the omnibus test
 list_fdr = [0.01 0.05 0.1 0.2]; % The FDR thresholds
-list_M = [0 0.01 0.05 0.1]; % Number of true positive per family
+list_M = [0 0.01 0.02 0.05 0.1]; % Number of true positive per family
 list_theta = [2 3 5]; % The effect size
-nb_samps = 10000; % Numer of samples
-nb_perm = 10000; % Number of permutation samples for the omnibus tests
-list_sc = [7 16 25 55 114]; % Number of tests per family
+nb_samps = 100; % Numer of samples
+nb_perm = nb_samps; % Number of permutation samples for the omnibus tests
+%list_sc = [100 200 1000 2000]; % Number of tests per family
+%list_sc = [1000 1000 1000 1000]; % Number of tests per family
+%list_sc = [100 200 500 1000 2000];
+%list_N = list_sc;
+
+%  % 'multiscale_short': parameters close of the simulation with dependent tests
+%  % i.e. replicate the number of tests in multiscale connectomes
+%  % using a subset of the scales from the real SCHIZO dataset
+%  list_sc = [7 16 25 55 114];
+%  list_N = list_sc.*(list_sc+1)/2;
+
+% Same parameters as the simulation with dependent tests
+% i.e. replicate the number of tests in multiscale connectomes
+% using a subset of the scales from the real SCHIZO dataset
+name_xp = 'multiscale_full';
+list_sc = [7 16 25 55 114 199 328];
 list_N = list_sc.*(list_sc+1)/2;
 
 %% Colors for the sensitivity plot
@@ -45,10 +60,17 @@ for ff = 1:length(list_fdr)
 end
 perc_null = sort(perc_null,2);
 
+%% Create figure handles and plot indices
+hfdr = figure; % Create a figure for the FDR plots
+for pp = 1:length(list_pce)
+    hsens(pp) = figure; % Create figures for the sensitivity plots (one per level of omnibus test)
+end
+num_plot_fdr = 1; % keep track of the number of the current FDR plot
+num_plot_sens = 1; % keep track of the number of the current sensitivity plot
+
 %% Loop over parameters
-for mm = 1:length(list_M)
-    for tt = 1:length(list_theta)
-        
+for tt = 1:length(list_theta)
+    for mm = 1:length(list_M)        
         fprintf('Simulation perc of true pos %1.3f perc, effect size %1.f. ',list_M(mm),list_theta(tt));
         %% Run simulations
         pce = cell(length(list_N),1);
@@ -132,38 +154,73 @@ for mm = 1:length(list_M)
         %% Now make figures
         
         % The FDR figure
-        name_fig = sprintf('sc%i_eff%i',ceil(100*list_M(mm)),list_theta(tt));
+        name_fig = sprintf('True Positive Rate %i%s',ceil(100*list_M(mm)),'%');
         
-        hf = figure;
+        figure(hfdr);
+        hp = subplot(length(list_theta),length(list_M),num_plot_fdr);
+        FN = findall(hp,'-property','FontName');
+        set(FN,'FontName','/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed.ttf');
+        FS = findall(hp,'-property','FontSize');
+        set(FS,'FontSize',8);
         hold on
-        plot([0; max(list_fdr)],[0; max(list_fdr)],'k')            
+        plot([0; max(list_fdr)],[0; max(list_fdr)],'k','LineWidth',4)            
         plot(list_fdr,fdr,'b')
-        plot(list_fdr,fdr_global(:,1),'r')
-        plot(list_fdr,fdr_global(:,2),'g')
+        plot(list_fdr,fdr_global(:,1),'r','LineWidth',4)
+        plot(list_fdr,fdr_global(:,2),'g','LineWidth',4)
         axis([0 max(list_fdr) 0 0.2]);
-        xlabel('Nominal FDR')
-        ylabel('Effective FDR')
-        title(strrep(name_fig,'_',' '))
-        print(hf,[path_res filesep 'fdr_' name_fig '.pdf'],'-dpdf')
-        close(hf)
+        if tt == length(list_theta)
+            xlabel('Nominal FDR');
+        end
+        if mm==1
+            ylabel('Effective FDR')
+        end
+        if tt==1
+            title(strrep(name_fig,'_',' '))
+        end
+        if (mm==length(list_M))&&(tt==length(list_theta))
+            print(hfdr,[path_res filesep 'fig_fdr_' name_xp '.png'],'-dpng')
+        end        
             
-            % the sensitivity figure
+        % the sensitivity figure
         for pp = 1:length(list_pce)
-            name_fig = sprintf('omnibus%i_sc%i_eff%i',ceil(100*list_pce(pp)),ceil(100*list_M(mm)),list_theta(tt));
+            figure(hsens(pp));
+            name_fig = sprintf('True Positive Rate %i%s',ceil(100*list_M(mm)),'%');
             if list_M(mm)~=0
-                hf = figure;
+                hp = subplot(length(list_theta),length(list_M)-1,num_plot_sens);                
                 hold on    
+                FN = findall(hp,'-property','FontName');
+                set(FN,'FontName','/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed.ttf');
+                FS = findall(hp,'-property','FontSize');
+                set(FS,'FontSize',8);
+        
                 for ff = 1:length(list_fdr)
-                    plot(list_sc,sens(ff,:,pp)',list_color{ff})
+                    plot(list_sc,sens(ff,:,pp)',list_color{ff},'LineWidth',4)
                 end
-                legend(cellstr(num2str(list_fdr'))')
+                %legend(cellstr(num2str(list_fdr'))')
                 axis([0 max(list_sc) 0 1]);
-                xlabel('Scale')
-                ylabel('Sensitivity')
-                title(strrep(name_fig,'_',' '))
-                print(hf,[path_res filesep 'sens_' name_fig '.pdf'],'-dpdf')
-                close(hf)
+                if tt == length(list_theta)
+                    xlabel('Scale')
+                end
+                if mm==2
+                    ylabel(sprintf('Sensitivity (eff=%i)',list_theta(tt)))
+                end
+                if tt==1
+                    title(strrep(name_fig,'_',' '))
+                end
+            end
+            if (mm==length(list_M))&&(tt==length(list_theta))
+                print(hsens(pp),[path_res filesep sprintf('sens_omnibus%i',ceil(100*list_pce(pp))) '_' name_xp '.png'],'-dpng')
             end
         end
+        
+        %% Increase plot numbers
+        num_plot_fdr = num_plot_fdr+1;
+        if list_M(mm)~=0
+            num_plot_sens = num_plot_sens+1;
+        end
     end
+end
+close(hfdr)
+for pp = 1:length(list_pce)
+   close(hsens(pp))
 end
