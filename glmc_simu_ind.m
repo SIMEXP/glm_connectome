@@ -20,25 +20,45 @@ list_pce = [0.05 Inf]; % The significance level for the omnibus test
 list_fdr = [0.01 0.05 0.1 0.2]; % The FDR thresholds
 list_M = [0 0.01 0.02 0.05 0.1]; % Number of true positive per family
 list_theta = [2 3 5]; % The effect size
-nb_samps = 100; % Numer of samples
+nb_samps = 1000; % Numer of samples
 nb_perm = nb_samps; % Number of permutation samples for the omnibus tests
-%list_sc = [100 200 1000 2000]; % Number of tests per family
-%list_sc = [1000 1000 1000 1000]; % Number of tests per family
-%list_sc = [100 200 500 1000 2000];
-%list_N = list_sc;
 
-%  % 'multiscale_short': parameters close of the simulation with dependent tests
+%  % A flat number of tests per family (1000)
+%  % To test scalability re number of families K (here K=2)
+%  name_xp = 'variablek_2';
+%  list_sc = [1000 1000];
+%  list_N = list_sc;
+
+%  % A flat number of tests per family (1000)
+%  % To test scalability re number of families K (here K=5)
+%  name_xp = 'variablek_5';
+%  list_sc = [1000 1000 1000 1000 1000];
+%  list_N = list_sc;
+
+%  % A flat number of tests per family (1000)
+%  % To test scalability re number of families K (here K=10)
+%  name_xp = 'variablek_10';
+%  list_sc = [1000 1000 1000 1000 1000 1000 1000 1000 1000 1000];
+%  list_N = list_sc;
+
+%  % A fixed number of families (K=5)
+%  % To test scalability re number of tests per family (here L=100 for all families)
+%  name_xp = 'variablel_100';
+%  list_sc = [100 100 100 100 100];
+%  list_N = list_sc;
+
+% A fixed number of families (K=5)
+% To test scalability re number of tests per family (here L=10000 for all families)
+name_xp = 'variablel_100';
+list_sc = [10000 10000 10000 10000 10000];
+list_N = list_sc;
+
+%  % Same parameters as the simulation with dependent tests
 %  % i.e. replicate the number of tests in multiscale connectomes
 %  % using a subset of the scales from the real SCHIZO dataset
-%  list_sc = [7 16 25 55 114];
+%  name_xp = 'multiscale_full';
+%  list_sc = [7 16 25 55 114 199 328];
 %  list_N = list_sc.*(list_sc+1)/2;
-
-% Same parameters as the simulation with dependent tests
-% i.e. replicate the number of tests in multiscale connectomes
-% using a subset of the scales from the real SCHIZO dataset
-name_xp = 'multiscale_full';
-list_sc = [7 16 25 55 114 199 328];
-list_N = list_sc.*(list_sc+1)/2;
 
 %% Colors for the sensitivity plot
 list_color = {'b','g','r','k'};
@@ -172,7 +192,7 @@ for tt = 1:length(list_theta)
             xlabel('Nominal FDR');
         end
         if mm==1
-            ylabel('Effective FDR')
+            ylabel(sprintf('Effective FDR (eff=%i)',list_theta(tt)))
         end
         if tt==1
             title(strrep(name_fig,'_',' '))
