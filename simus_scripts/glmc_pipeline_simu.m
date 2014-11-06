@@ -66,10 +66,12 @@ param.perc_rand = [0 0.3];
 
 % Selection of the cluster of reference
 % At scale 0, there is not simulated signal (global null hypothesis)
-% At scale 4, cluster 4 is 38.7% of the grey matter, which makes for a percentage of true difference close to 15% (14.98%)
-% At scale 7, cluster 7 is 20.5% of the grey matter, which makes for a percentage of true difference close to 4% (4.2%)
-param.sc      = { 0 , 4 , 7 }; % The scale of reference that use used to define the ground truth
-param.cluster = { 0 , 4 , 7 }; % The number of the cluster that is used at the scale of reference. The fact that SC and CLUSTER are identical is a coincidence.
+% At scale 8, cluster 3 is 10.4% of the grey matter, which makes for a percentage of true difference close to 1% (1.0%)
+% At scale 7, cluster 3 is 13.7% of the grey matter, which makes for a percentage of true difference close to 2% (1.9%)
+% At scale 5, cluster 5 is 22.6% of the grey matter, which makes for a percentage of true difference close to 5% (5.1%)
+% At scale 4, cluster 3 is 30.8% of the grey matter, which makes for a percentage of true difference close to 10% (9.6%)
+param.sc      = { 0 , 8 , 7 , 5 , 4 }; % The scale of reference that use used to define the ground truth
+param.cluster = { 0 , 3 , 3 , 5 , 3 }; % The number of the cluster that is used at the scale of reference. The fact that SC and CLUSTER are identical is a coincidence.
 
 % Number of subjects per group
 param.nsub           = {  40 , 100 }; 
