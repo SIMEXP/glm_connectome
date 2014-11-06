@@ -23,11 +23,11 @@ list_theta = [2 3 5]; % The effect size
 nb_samps = 1000; % Numer of samples
 nb_perm = nb_samps; % Number of permutation samples for the omnibus tests
 
-%  % A flat number of tests per family (1000)
-%  % To test scalability re number of families K (here K=2)
-%  name_xp = 'variablek_2';
-%  list_sc = [1000 1000];
-%  list_N = list_sc;
+% A flat number of tests per family (1000)
+% To test scalability re number of families K (here K=2)
+name_xp = 'variablek_2';
+list_sc = [1000 1000];
+list_N = list_sc;
 
 %  % A flat number of tests per family (1000)
 %  % To test scalability re number of families K (here K=5)
@@ -47,16 +47,31 @@ nb_perm = nb_samps; % Number of permutation samples for the omnibus tests
 %  list_sc = [100 100 100 100 100];
 %  list_N = list_sc;
 
-% A fixed number of families (K=5)
-% To test scalability re number of tests per family (here L=10000 for all families)
-name_xp = 'variablel_100';
-list_sc = [10000 10000 10000 10000 10000];
-list_N = list_sc;
+%  % A fixed number of families (K=5)
+%  % To test scalability re number of tests per family (here L=10000 for all families)
+%  name_xp = 'variablel_100';
+%  list_sc = [10000 10000 10000 10000 10000];
+%  list_N = list_sc;
+
+%  % Multiscale analysis with regular grid
+%  name_xp = 'multiscale_50_step_10';
+%  list_sc = [10:10:50];
+%  list_N = list_sc.*(list_sc+1)/2;
+
+% Multiscale analysis with regular grid
+%  name_xp = 'multiscale_100_step_10';
+%  list_sc = [10:10:100];
+%  list_N = list_sc.*(list_sc+1)/2;
+
+%  % Multiscale analysis with regular grid
+%  name_xp = 'multiscale_300_step_10';
+%  list_sc = [10:10:300];
+%  list_N = list_sc.*(list_sc+1)/2;
 
 %  % Same parameters as the simulation with dependent tests
 %  % i.e. replicate the number of tests in multiscale connectomes
 %  % using a subset of the scales from the real SCHIZO dataset
-%  name_xp = 'multiscale_full';
+%  name_xp = 'multiscale_msteps_schizo';
 %  list_sc = [7 16 25 55 114 199 328];
 %  list_N = list_sc.*(list_sc+1)/2;
 
@@ -174,7 +189,7 @@ for tt = 1:length(list_theta)
         %% Now make figures
         
         % The FDR figure
-        name_fig = sprintf('True Positive Rate %i%s',ceil(100*list_M(mm)),'%');
+        name_fig = sprintf('\\pi_1=%i%s',ceil(100*list_M(mm)),'%');
         
         figure(hfdr);
         hp = subplot(length(list_theta),length(list_M),num_plot_fdr);
@@ -191,12 +206,12 @@ for tt = 1:length(list_theta)
         if tt == length(list_theta)
             xlabel('Nominal FDR');
         end
+        if tt==1
+            title(name_fig)
+        end
         if mm==1
             ylabel(sprintf('Effective FDR (eff=%i)',list_theta(tt)))
-        end
-        if tt==1
-            title(strrep(name_fig,'_',' '))
-        end
+        end        
         if (mm==length(list_M))&&(tt==length(list_theta))
             print(hfdr,[path_res filesep 'fig_fdr_' name_xp '.png'],'-dpng')
         end        
@@ -204,7 +219,7 @@ for tt = 1:length(list_theta)
         % the sensitivity figure
         for pp = 1:length(list_pce)
             figure(hsens(pp));
-            name_fig = sprintf('True Positive Rate %i%s',ceil(100*list_M(mm)),'%');
+            name_fig = sprintf('\\pi_1=%i%s',ceil(100*list_M(mm)),'%');
             if list_M(mm)~=0
                 hp = subplot(length(list_theta),length(list_M)-1,num_plot_sens);                
                 hold on    
@@ -225,7 +240,7 @@ for tt = 1:length(list_theta)
                     ylabel(sprintf('Sensitivity (eff=%i)',list_theta(tt)))
                 end
                 if tt==1
-                    title(strrep(name_fig,'_',' '))
+                    title(name_fig)
                 end
             end
             if (mm==length(list_M))&&(tt==length(list_theta))
