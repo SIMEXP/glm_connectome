@@ -96,7 +96,7 @@ for num_alpha2 = 1:length(param.alpha2) % Loop over effect size
                 xlabel('Nominal FDR');
             end
             if (num_nsub == 1)&&(num_alpha2==1)
-                title(strrep(name_fig,'_',' '))
+                title(name_fig)
             end
             if num_sc==1
                 ylabel(sprintf('Effective FDR\n(N=%i,eff=%1.2f)',param.nsub{num_nsub},param.alpha2{num_alpha2}))
