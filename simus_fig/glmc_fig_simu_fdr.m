@@ -27,7 +27,7 @@ num_plot_fdr = 1; % keep track of the number of the current FDR plot
 num_p = 1;
 for num_alpha2 = 1:length(param.alpha2) % Loop over effect size
     for num_nsub = 1:length(param.nsub) % Loop over the number of subjects
-        for num_sc = [1 3 2] % Loop over reference clusters
+        for num_sc = 1:length(param.sc) % Loop over reference clusters
             % Load data
             name_xp = sprintf('simu_perc%i_sc%i_a2%i_nsub%i',ceil(100*param.perc_rand(num_p)),param.sc{num_sc},ceil(100*param.alpha2{num_alpha2}),param.nsub{num_nsub});                            
             fprintf('%s\n',name_xp)
@@ -77,9 +77,13 @@ for num_alpha2 = 1:length(param.alpha2) % Loop over effect size
                 case 1
                     name_fig = 'True Positive Rate 0%';
                 case 2
-                    name_fig = 'True Positive Rate \sim15%';
+                    name_fig = 'True Positive Rate \sim1%';
                 case 3
+                    name_fig = 'True Positive Rate \sim2%';
+                case 4
                     name_fig = 'True Positive Rate \sim5%';
+                case 5
+                    name_fig = 'True Positive Rate \sim10%';
             end
             hp = subplot(length(param.nsub)*length(param.alpha2),length(param.sc),num_plot_fdr);
             FN = findall(hp,'-property','FontName');
