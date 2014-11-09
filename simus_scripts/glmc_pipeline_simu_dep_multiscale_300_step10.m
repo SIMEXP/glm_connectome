@@ -124,5 +124,5 @@ end
 %%%%%%%%%%%%%%%%%%%%%%
 opt_p.path_logs = path_logs;
 opt_p.flag_pause = false;
-opt_p.qsub_options = '-q sw -l walltime=05:00:00';
+opt_p.qsub_options = '-q sw -l walltime=10:00:00';
 %psom_run_pipeline(pipe,opt_p);
