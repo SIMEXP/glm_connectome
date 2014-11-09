@@ -8,7 +8,7 @@ pause
 %% Set up paths
 path_curr = pwd;
 path_roi  = [path_curr filesep 'rois']; % Where to save the real regional time series
-path_out  = [path_curr filesep 'simu_perfect_match']; % Where to store the results of the simulation
+path_out  = [path_curr filesep 'simu_dep_multiscale_300_step10']; % Where to store the results of the simulation
 path_logs = [path_out filesep 'logs']; % Where to save the logs of the pipeline
 psom_mkdir(path_out);
 
