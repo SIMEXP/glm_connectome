@@ -49,8 +49,8 @@ in.hier = [path_roi filesep 'hier_avg_connectome.mat'];
 % The number of simulation samples. 
 % Note that each simulation job is performing itself several simulations. 
 % The final number of simulations is NB_SAMPS*NB_REPLICATION
-param.nb_samps       = 10; 
-param.nb_replication = 100;
+param.nb_samps       = 40; 
+param.nb_replication = 25;
 
 % The list of scales to be tested 
 param.list_scales = 10:10:300;
