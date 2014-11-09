@@ -23,11 +23,11 @@ list_theta = [2 3 5]; % The effect size
 nb_samps = 1000; % Numer of samples
 nb_perm = nb_samps; % Number of permutation samples for the omnibus tests
 
-% A flat number of tests per family (1000)
-% To test scalability re number of families K (here K=2)
-name_xp = 'variablek_2';
-list_sc = [1000 1000];
-list_N = list_sc;
+%  % A flat number of tests per family (1000)
+%  % To test scalability re number of families K (here K=2)
+%  name_xp = 'variablek_2';
+%  list_sc = [1000 1000];
+%  list_N = list_sc;
 
 %  % A flat number of tests per family (1000)
 %  % To test scalability re number of families K (here K=5)
@@ -48,8 +48,15 @@ list_N = list_sc;
 %  list_N = list_sc;
 
 %  % A fixed number of families (K=5)
+%  % To test scalability re number of tests per family 
+%  lk = 10000;
+%  name_xp = sprintf('variablel_%i',lk);
+%  list_sc = repmat(lk,[1 5]);
+%  list_N = list_sc;
+
+%  % A fixed number of families (K=5)
 %  % To test scalability re number of tests per family (here L=10000 for all families)
-%  name_xp = 'variablel_100';
+%  name_xp = 'variablel_10000';
 %  list_sc = [10000 10000 10000 10000 10000];
 %  list_N = list_sc;
 
@@ -59,8 +66,13 @@ list_N = list_sc;
 %  list_N = list_sc.*(list_sc+1)/2;
 
 % Multiscale analysis with regular grid
-%  name_xp = 'multiscale_100_step_10';
-%  list_sc = [10:10:100];
+name_xp = 'multiscale_100_step_10';
+list_sc = [10:10:100];
+list_N = list_sc.*(list_sc+1)/2;
+
+%  % Multiscale analysis with regular grid
+%  name_xp = 'multiscale_200_step_10';
+%  list_sc = [10:10:200];
 %  list_N = list_sc.*(list_sc+1)/2;
 
 %  % Multiscale analysis with regular grid
@@ -136,7 +148,7 @@ for tt = 1:length(list_theta)
         
         for ff = 1:length(list_fdr) % Loop over FDR thresholds
             niak_progress(ff,length(list_fdr));
-            q = list_fdr(ff); % Select the FDR threshold
+            q = list_fdr(ff); % Select the FDR threshold            
             
             %% Compute the FDR tests, and derive the number of false/true positives, along with the number and percentage of discoveries
             for nn = 1:length(list_N) % Loop over families
@@ -153,13 +165,17 @@ for tt = 1:length(list_theta)
             perc_global(ff,:) = mean(perc(ff,:,:),3); % average the percentage of discoveries across families
             p_omn = zeros(1,nb_samps);
             for ss = 1:nb_samps
-                p_omn(ss) = sum(perc_null(ff,:)>=perc_global(ff,ss))/nb_perm;
-            end
+                p_omn(ss) = (sum(perc_null(ff,:)>=perc_global(ff,ss))/nb_perm);
+            end            
             
             %% Compute the familywise FDR, global FDR, and familywise sensitivity
             %% as a function of the threshold on the omnibus test
-            for pp = 1:length(list_pce) % Loop over omnibus thresholds          
-                thre_pce = list_pce(pp); % Select a threshold on the omnibus test
+            for pp = 1:length(list_pce) % Loop over omnibus thresholds   
+                if list_pce(pp)==0
+                    thre_pce = list_fdr(ff); % Select a threshold on the omnibus test
+                else
+                    thre_pce = list_pce(pp); 
+                end
                 
                 %% Estimate the global FDR
                 tmp = sum(fp(ff,:,:),3)./sum(disc(ff,:,:),3); % Divide the sum of false positives across families by the sum of discoveries across families
