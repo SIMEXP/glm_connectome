@@ -34,11 +34,15 @@ for num_alpha2 = 1:length(param.alpha2) % Loop over effect size
                 name_job = sprintf('simu_a2%i_nsub%i_sc%i_perc%i_samp%i',ceil(100*param.alpha2{num_alpha2}),param.nsub{num_nsub},param.sc{num_sc},ceil(100*param.perc_rand(num_p)),num_s);                    
                 file_data = [path_results filesep name_job '.mat'];
                 data = load(file_data);
-                perc = zeros(nb_scale,opt.nb_replication * nb_samps);
+                eff_size = zeros(param.nb_samps*param.nb_replication,nb_scale);
                 for rr = 1:length(data.results)
                     for ss = 1:nb_scale
-                        perc(ss,num_exp) = sum(data.results(rr).test_q{ss}(:))/length(data.results(rr).test_q{ss}(:));
-                        num_exp = num_exp+1;
+                        mat_tmp = data.results(rr).mean_diff{ss}./data.results(rr).std_iir{ss};
+                        if any((data.results(rr).std_iir{ss}(:)==0)&(data.results(rr).mean_diff{ss}(:)~=0))
+                             error('Huho')
+                        end
+                        mat_tmp(data.results(rr).std_iir{ss}(:)==0) = 0;
+                        eff_size(npce,ss) = mean(mean(mat_tmp));  
                     end
                 end        
             end
