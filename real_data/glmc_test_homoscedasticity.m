@@ -20,26 +20,21 @@ for num_f = 1:length(list_files)
 %for num_f = 5
     fprintf('Experiment %s. ',name_xp{num_f});
     data = load(list_files{num_f});
-    res = niak_glm(data.model_group,opt_glm);
-    pce_w = zeros(size(res.e,2),1);
-    for num_c = 1:size(res.e,2)
-        niak_progress(num_c,size(res.e,2))
-        [h,pce_w(num_c)] = swtest(res.e(:,num_c));
-    end
-    pce_w = pce_w(~isnan(pce_w));
+    pce_h = niak_white_test_hetero(data.model_group);
+    pce_h = pce_h(~isnan(pce_h));
     hp = subplot(3,2,num_f);
     X = 0.01:0.02:0.99; 
-    Y = hist(pce_w,X);
-    Y = Y/(length(pce_w)*(X(2)-X(1)));
+    Y = hist(pce_h,X);
+    Y = Y/(length(pce_h)*(X(2)-X(1)));
     axis([0,1,0,3])
     FN = findall(hp,'-property','FontName');
     set(FN,'FontName','/usr/share/fonts/truetype/dejavu/DejaVuSerifCondensed.ttf');
     FS = findall(hp,'-property','FontSize');
     set(FS,'FontSize',8);
-    title([name_xp{num_f} ' scale ' num2str(size(niak_lvec2mat(res.ttest),2))]);
+    title([name_xp{num_f} ' scale ' num2str(size(niak_lvec2mat(data.model_group.y(1,:)),2))]);
     ylabel('normalized histogram')
     if (num_f==5)||(num_f==6)
-        xlabel('p-value (Shapiro-Wilk)');
+        xlabel('p-value (White)');
     end
     set(gca,'Color',[193/255 226/255 247/255]);
     
@@ -49,10 +44,10 @@ for num_f = 1:length(list_files)
     bar(X,Y)
     %axis([0 max(param.list_scales) 0.007 0.15]);
     
-    [fdr,test] = niak_fdr(pce_w (:),'BH',0.05);
-    fprintf('Percentage of pce below 0.5: %1.3f. Percentage of significant tests: %1.2f\n',sum(pce_w <0.05)/length(pce_w),sum(test)/length(test));
+    [fdr,test] = niak_fdr(pce_h (:),'BH',0.05);
+    fprintf('Percentage of pce below 0.5: %1.3f. Percentage of significant tests: %1.2f\n',sum(pce_h <0.05)/length(pce_h),sum(test)/length(test));
 end
-print([path_data 'fig_test_gaussian.pdf'],'-dpdf')
+print([path_data 'fig_test_hetero.pdf'],'-dpdf')
 
 return
 
