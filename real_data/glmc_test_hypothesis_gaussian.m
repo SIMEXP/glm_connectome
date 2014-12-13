@@ -15,7 +15,7 @@ list_files = { [path_data 'alloego' filesep 'glm_rest2VS1_avg_sci270_scg297_scf3
                [path_data 'cambridge' filesep 'glm_subject40_sc328']                         ; ...
                [path_data 'cobre' filesep 'glm_szVScont_age_sex_FD_sci270_scg324_scf328.mat'] ; ...
                [path_data 'cambridge' filesep 'glm_subject180_sc328'] };
-name_xp = { 'motor' , 'cambridge40' , 'blind' , 'cambridge100' , 'cobre' , 'cambridge180'} ;
+name_xp = { 'MOTOR' , 'Cambridge (N=40)' , 'BLIND' , 'Cambridge (N=100)' , 'SCHIZO' , 'Cambridge (N=180)'} ;
 for num_f = 1:length(list_files)
 %for num_f = 5
     fprintf('Experiment %s. ',name_xp{num_f});
@@ -46,13 +46,28 @@ for num_f = 1:length(list_files)
     gridxy(0:0.1:1,'color',[1 1 1],'LineStyle','-','LineWidth',3) 
     gridxy([],0:0.5:3,'color',[1 1 1],'LineStyle','-','LineWidth',3) 
     hold on
-    bar(X,Y)
+    hb = bar(X,Y);
+    set(hb,'facecolor',[0 0 0.6])
+    
     %axis([0 max(param.list_scales) 0.007 0.15]);
     
     [fdr,test] = niak_fdr(pce_w (:),'BH',0.05);
     fprintf('Percentage of pce below 0.5: %1.3f. Percentage of significant tests: %1.2f\n',sum(pce_w <0.05)/length(pce_w),sum(test)/length(test));
 end
 print([path_data 'fig_test_gaussian.pdf'],'-dpdf')
+
+%  Experiment MOTOR. 
+%  Percentage of pce below 0.5: 0.090. Percentage of significant tests: 0.00
+%  Experiment Cambridge (N=40).
+%  Percentage of pce below 0.5: 0.076. Percentage of significant tests: 0.00
+%  Experiment BLIND. 
+%  Percentage of pce below 0.5: 0.068. Percentage of significant tests: 0.00
+%  Experiment Cambridge (N=100).
+%  Percentage of pce below 0.5: 0.076. Percentage of significant tests: 0.00
+%  Experiment SCHIZO.
+%  Percentage of pce below 0.5: 0.111. Percentage of significant tests: 0.00
+%  Experiment Cambridge (N=180). 
+%  Percentage of pce below 0.5: 0.106. Percentage of significant tests: 0.00
 
 return
 
