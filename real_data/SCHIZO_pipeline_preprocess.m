@@ -1,20 +1,22 @@
  
-% Run the preprocessing pipeline on the MOTOR dataset. 
+% Create the inputs of and launch the NIAK_PIPELINE_FMRI_PREPROCESS on the
+% specified dataset (cobre dataset)
 
 clear all
 
 addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.2/'))
 
-path_raw_fmri       = '/home/porban/database/alloego/mnc_data_select/';
-path_preprocess     = '/gs/scratch/porban/bascglm/alloego_fmri_preprocess_BASCGLM_20140405/';
+path_raw_fmri       = '/home/porban/database/cobre/mnc_data';
+path_preprocess     = '/gs/scratch/porban/bascglm/cobre_fmri_preprocess_bascglm_20140405/';
 
 
 
-%%
-
-
+groups_list = {'sz', 'cont'};
     
-        subjects_list = dir(path_raw_fmri);
+    for group_n = 1:size(groups_list,2)
+        group = groups_list{group_n};
+        path_group = [path_raw_fmri,filesep,group,filesep];
+        subjects_list = dir(path_group);
         subjects_list = subjects_list(3:end);
         
         for num_s = 1:size(subjects_list,1)
@@ -23,23 +25,21 @@ path_preprocess     = '/gs/scratch/porban/bascglm/alloego_fmri_preprocess_BASCGL
             subject = subjects_list(num_s).name
 
             %anat
-            fmrirun = dir([path_raw_fmri filesep subject filesep 'anat' filesep '*.mnc.gz']);
-            anat = [path_raw_fmri filesep subject filesep 'anat' filesep fmrirun.name];
+            fmrirun = dir([path_group filesep subject filesep 'anat' filesep '*.mnc.gz']);
+            anat = [path_group filesep subject filesep 'anat' filesep fmrirun.name];
             
             %func
-            fmrirun = dir([path_raw_fmri filesep subject filesep 'fmri/rest1' filesep '*.mnc.gz']);
-            fmri.session1.run1=[path_raw_fmri filesep subject filesep 'fmri/rest1' filesep fmrirun.name];
-            
-            fmrirun = dir([path_raw_fmri filesep subject filesep 'fmri/rest2' filesep '*.mnc.gz']);
-            fmri.session1.run2=[path_raw_fmri filesep subject filesep 'fmri/rest2' filesep fmrirun.name];
+            fmrirun = dir([path_group filesep subject filesep 'rest' filesep '*.mnc.gz']);
+            fmri.session1.run1=[path_group filesep subject filesep 'rest' filesep fmrirun.name];
                        
-            files_in.(subject).fmri = fmri;
-            files_in.(subject).anat = anat;
+            files_in.([group 'xxx' subject]).fmri = fmri;
+            files_in.([group 'xxx' subject]).anat = anat;
             
         end
+        
+    end
  
 
-    
     
 %% Building the optional inputs
 opt.folder_out = path_preprocess; 

@@ -1,15 +1,13 @@
-% Run the multiscale GLM-connectome pipeline (with BH FDR) on the SCHIZO dataset
-
 clear all
 
-addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.4/'))
+addpath(genpath('/home/porban/quarantaine/niak-boss-0.12.18/'))
 
 %%%%%%%%%%%%
 %% Grabbing the results from BASC
 %%%%%%%%%%%%
 opt_g_basc.level = 'group';
 opt_g_basc.flag_tseries = false;
-files_in = niak_grab_stability_rest('/gs/scratch/porban/bascglm/cobre_basc_bascglm_20140405',opt_g_basc);
+files_in = niak_grab_stability_rest('/gs/scratch/porban/bascglm/cobre_basc_bascglm_20141101',opt_g_basc);
 
 %%%%%%%%%%%%
 %% Grabbing the results from the NIAK fMRI preprocessing pipeline
@@ -34,9 +32,9 @@ files_in.model.group = '/home/porban/database/bascglm/models/cobre_model_group.c
 %%%%%%%%%%%%
 %% Options 
 %%%%%%%%%%%%
-opt.folder_out = '/gs/scratch/porban/bascglm/results/cobre_glm_global_bascglm_20140518'; % Where to store the results
+opt.folder_out = '/gs/scratch/porban/bascglm/results/cobre_glm_BH_all_bascglm_20141101'; % Where to store the results
 opt.fdr = 0.05; % The maximal false-discovery rate that is tolerated both for individual (single-seed) maps and whole-connectome discoveries, at each particular scale (multiple comparisons across scales are addressed via permutation testing)
-opt.type_fdr = 'global';
+% opt.type_fdr = 'global';
 opt.fwe = 0.05; % The overall family-wise error, i.e. the probablity to have the observed number of discoveries, agregated across all scales, under the global null hypothesis of no association.
 % opt.nb_samps = 1000; % The number of samples in the permutation test. This number has to be multiplied by OPT.NB_BATCH below to get the effective number of samples
 % opt.nb_batch = 10; % The permutation tests are separated into NB_BATCH independent batches, which can run on parallel if sufficient computational resources are available
