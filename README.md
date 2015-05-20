@@ -27,8 +27,8 @@ GLM-connectome analysis of the MOTOR dataset
  * The [region growing](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_region_growing.m) pipeline.
  * The [Boostrap Analysis of Stable Clusters](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_basc_regular_grid.m) pipeline, with regular grid of scales.
  * The [Boostrap Analysis of Stable Clusters](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_basc_MSTEPS.m) pipeline, with scales selected by MSTEPS.
- * The [Multiscale Statistical Parametric Connectome](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_MSPC_regular_grid.m) pipeline.
- * The [Multiscale Statistical Parametric Connectome](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/SCHIZO_pipeline_MSPC_MSTEPS.m) pipeline, with scales selected by MSTEPS.
+ * The [Multiscale Statistical Parametric Connectome](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_MSPC_regular_grid.m) pipeline.
+ * The [Multiscale Statistical Parametric Connectome](https://github.com/SIMEXP/glm_connectome/blob/master/real_data/MOTOR_pipeline_MSPC_MSTEPS.m) pipeline, with scales selected by MSTEPS.
 
 GLM-connectome analysis of the BLIND dataset
 -----------------------------
