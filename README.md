@@ -3,9 +3,9 @@ glm_connectome_paper
 
 This github repository contains the scripts used to generate the results of the following publication: 
 
-P. Bellec, Y. Benhajali, F. Carbonell, C. Dansereau, G. Albouy, M. Pelland, C. Craddock, O. Collignon, J. Doyon, E. Stip, P. Orban _Multiscale statistical testing for connectome-wide association studies in fMRI_ [arXiv:1409.2080](http://arxiv.org/abs/1409.2080) [q-bio.QM]
+P. Bellec, Y. Benhajali, F. Carbonell, C. Dansereau, G. Albouy, M. Pelland, C. Craddock, O. Collignon, J. Doyon, E. Stip, P. Orban _Impact of the resolution of brain parcels on connectome-wide association studies in fMRI_ [Neuroimage, in press 2015.](http://dx.doi.org/10.1016/j.neuroimage.2015.07.071)
 
-This code is not meant as a toolbox for public use. The GLM-connectome method is publicly available as part of the [NIAK](https://github.com/SIMEXP/niak) package for the "boss" release 0.12.18 and latter. To run the code, please download [NIAK 0.12.18](http://www.nitrc.org/frs/download.php/7163/niak-boss-0.12.18.zip) as well as the [latest release](https://github.com/SIMEXP/glm_connectome/releases) of this repository. For any question, please contact pierre.bellec (at) criugm.qc.ca. 
+This code is not meant as a toolbox for general use, but as a documentation of the specific implementation used in the paper. The GLM-connectome method is publicly available as part of the [NIAK](https://github.com/SIMEXP/niak) package for the "boss" release 0.12.18 and is being continuously improved in latter releases. To run the code, please download [NIAK 0.12.18](http://www.nitrc.org/frs/download.php/7163/niak-boss-0.12.18.zip) as well as the [latest release](https://github.com/SIMEXP/glm_connectome/releases) of this repository. For any question, please contact pierre.bellec (at) criugm.qc.ca. 
 
 Data
 ----
