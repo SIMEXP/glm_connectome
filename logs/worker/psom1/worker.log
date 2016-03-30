@@ -1,0 +1,230 @@
+Octave version 3.8.1
+Minc-tool-kit version 0.3.18-20130531
+NIAK quarantine /home/pbellec/git/niak/commands/misc/niak_gb_vars.m
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_contxxx0040066
+Started on 30-Mar-2016 10:05:19
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+warning: print.m: fig2dev binary is not available.
+Some output formats are not available.
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040066_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040066_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_contxxx0040066.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:05:31 : The job was successfully completed
+Total time used to process the job : 12.22 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : report_contxxx0040068
+Started on 30-Mar-2016 10:05:31
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040068_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040068_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_contxxx0040068.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:05:39 : The job was successfully completed
+Total time used to process the job : 8.10 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_contxxx0040074
+Started on 30-Mar-2016 10:05:39
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040074_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040074_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_contxxx0040074.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:05:49 : The job was successfully completed
+Total time used to process the job : 9.35 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_contxxx0040127
+Started on 30-Mar-2016 10:05:49
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040127_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_contxxx0040127_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_contxxx0040127.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:05:58 : The job was successfully completed
+Total time used to process the job : 9.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_szxxx0040000
+Started on 30-Mar-2016 10:05:58
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040000_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040000_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_szxxx0040000.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:07 : The job was successfully completed
+Total time used to process the job : 8.77 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_szxxx0040012
+Started on 30-Mar-2016 10:06:07
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040012_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040012_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_szxxx0040012.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:15 : The job was successfully completed
+Total time used to process the job : 8.04 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_szxxx0040049
+Started on 30-Mar-2016 10:06:15
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040049_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040049_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_szxxx0040049.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:23 : The job was successfully completed
+Total time used to process the job : 8.49 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_szxxx0040088
+Started on 30-Mar-2016 10:06:23
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040088_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040088_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_szxxx0040088.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:31 : The job was successfully completed
+Total time used to process the job : 7.92 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom1/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : report_szxxx0040110
+Started on 30-Mar-2016 10:06:31
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+Generating slices of the anatomical scan...
+Generating slices of the functional scan...
+Generating the QC html report...
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040110_anat.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/summary_szxxx0040110_func.jpg was successfully generated!
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/report_coregister_szxxx0040110.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:41 : The job was successfully completed
+Total time used to process the job : 9.72 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : index_html
+Started on 30-Mar-2016 10:06:41
+User: pbellec
+host : sw-2r10-n67
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/index.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:41 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+30-Mar-2016 10:06:42 - The manager has requested to end the work asap!
+30-Mar-2016 10:06:42 - The manager has requested to end the work asap!
+
+attempting to save variables to 'octave-workspace'...

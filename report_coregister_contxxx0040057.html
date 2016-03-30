@@ -1,0 +1,40 @@
+<head>
+<style>
+#lcontainer{
+    position:relative;
+}
+#lcontainer img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:50%;
+    heigth:auto;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 0.75s;
+}
+#rcontainer{
+    position:relative;
+}
+#rcontainer img{
+    position:absolute;
+    top:0;
+    right:0;
+    width:50%;
+    heigth:auto;
+    -webkit-transition: opacity 1s; /* Safari */
+    transition: opacity 0.75s;
+}
+
+.hide:hover{
+    opacity:0;
+}
+</style>
+</head>
+<div id="lcontainer">
+    <img src="summary_template.jpg" >
+    <img class="hide" src="summary_contxxx0040057_anat.jpg" >
+</div>
+<div id="rcontainer">
+    <img src="summary_contxxx0040057_anat.jpg" >
+    <img class="hide" src="summary_contxxx0040057_func.jpg" >
+</div>

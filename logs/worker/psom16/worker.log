@@ -1,0 +1,243 @@
+Octave version 3.8.1
+Minc-tool-kit version 0.3.18-20130531
+NIAK quarantine /home/pbellec/git/niak/commands/misc/niak_gb_vars.m
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040065
+Started on 30-Mar-2016 10:06:29
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040065.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:29 : The job was successfully completed
+Total time used to process the job : 0.02 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040066
+Started on 30-Mar-2016 10:06:29
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040066.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:29 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040067
+Started on 30-Mar-2016 10:06:29
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040067.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:29 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040116
+Started on 30-Mar-2016 10:06:29
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040116.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:29 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040128
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040128.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_contxxx0040139
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_contxxx0040139.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040004
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040004.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040012
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040012.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040034
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040034.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040060
+Started on 30-Mar-2016 10:06:30
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040060.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:30 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040080
+Started on 30-Mar-2016 10:06:31
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040080.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:31 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040092
+Started on 30-Mar-2016 10:06:31
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040092.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:31 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040106
+Started on 30-Mar-2016 10:06:31
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040106.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:31 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.mat' 
+Deleting file '/home/pbellec/database/database2/cobre/cobre_qc_report_20140405/logs/worker/psom16/new_jobs.ready' 
+
+******************************
+Log of the (octave) job : wrapper_szxxx0040133
+Started on 30-Mar-2016 10:06:31
+User: pbellec
+host : sw-2r10-n30
+system : unix
+******************************
+
+
+The output file or directory /home/pbellec/database/database2/cobre/cobre_qc_report_20140405/wrapper_szxxx0040133.html was successfully generated!
+
+*********************************************************
+30-Mar-2016 10:06:31 : The job was successfully completed
+Total time used to process the job : 0.01 sec.
+*********************************************************
+30-Mar-2016 10:06:32 - The manager has requested to end the work asap!
+30-Mar-2016 10:06:32 - The manager has requested to end the work asap!
+
+attempting to save variables to 'octave-workspace'...
